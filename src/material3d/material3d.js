@@ -1,5 +1,9 @@
 import * as THREE from 'three'
 
-// Materials
-export const material = new THREE.MeshBasicMaterial();
-material.color = new THREE.Color(0xff0000);
+//export const material = new THREE.MeshBasicMaterial();
+export const material = new THREE.MeshStandardMaterial({
+    metalness:0.7,
+    roughness:0.2,
+    color: new THREE.Color(0x292929)
+});
+//material.color = new THREE.Color(0x00ff00);

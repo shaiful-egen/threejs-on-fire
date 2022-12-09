@@ -5,20 +5,12 @@ import * as dat from 'dat.gui'
 import {sphere} from "./mesh3d/mesh3d";
 import {sizes} from "./constant/size";
 import {camera} from "./camera/camera";
-import {pointLight} from "./light/light";
 import {renderer} from "./renderer/renderer";
+import {scene} from "./scene/scene";
+import {clock} from "./animation/animation";
 
 // Debug
 const gui = new dat.GUI();
-
-
-
-// Scene
-const scene = new THREE.Scene();
-
-scene.add(sphere);
-scene.add(camera);
-scene.add(pointLight);
 
 window.addEventListener('resize', () => {
     // Update sizes
@@ -38,8 +30,6 @@ window.addEventListener('resize', () => {
 // const controls = new OrbitControls(camera, canvas)
 // controls.enableDamping = true
 
-/** Animate */
-const clock = new THREE.Clock();
 
 const tick = () => {
     const elapsedTime = clock.getElapsedTime()
