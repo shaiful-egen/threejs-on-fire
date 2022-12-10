@@ -9,6 +9,5 @@ camera.position.set(0,0,4);
 camera.position.y = 0;
 camera.position.z = 10;*/
 
-const orbit = new OrbitControls(camera,renderer.domElement)
-orbit.update();
+
 

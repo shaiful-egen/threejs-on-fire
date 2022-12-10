@@ -5,14 +5,12 @@ const path = require('path')
 
 module.exports = {
     entry: path.resolve(__dirname, '../src/script.js'),
-    output:
-    {
+    output: {
         filename: 'bundle.[contenthash].js',
         path: path.resolve(__dirname, '../dist')
     },
     devtool: 'source-map',
-    plugins:
-    [
+    plugins: [
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, '../static') }
@@ -24,26 +22,21 @@ module.exports = {
         }),
         new MiniCSSExtractPlugin()
     ],
-    module:
-    {
-        rules:
-        [
+    module: {
+        rules: [
             // HTML
             {
                 test: /\.(html)$/,
                 use: ['html-loader']
             },
-
             // JS
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use:
-                [
+                use: [
                     'babel-loader'
                 ]
             },
-
             // CSS
             {
                 test: /\.css$/,
@@ -53,12 +46,10 @@ module.exports = {
                     'css-loader'
                 ]
             },
-
             // Images
             {
                 test: /\.(jpg|png|gif|svg)$/,
-                use:
-                [
+                use: [
                     {
                         loader: 'file-loader',
                         options:
@@ -68,7 +59,6 @@ module.exports = {
                     }
                 ]
             },
-
             // Fonts
             {
                 test: /\.(ttf|eot|woff|woff2)$/,
